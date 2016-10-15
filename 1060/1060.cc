@@ -6,19 +6,21 @@ int main()
 {
     int day;
     vector<int> dis;
-    vector<int> edton;
     cin >> day;
     int i;
     while ((cin >> i) && (i >= 0))
         dis.push_back(i);
     sort(dis.begin(), dis.end());
     int max = -1;
-    auto beg = dis.begin();
-    for (auto it = beg; it != dis.end(); ++it)
+    auto beg = dis.rbegin();
+    for (auto it = beg; it != dis.rend(); ++it)
     {
-        auto back = dis.end() - it;
+        auto back = it - dis.rbegin() + 1;
         if (back >= *it)
-            max = *it;
+        {
+            max = back - 1;
+            break;
+        }
     }
 
     cout << max;
