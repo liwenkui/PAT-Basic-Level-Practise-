@@ -12,8 +12,7 @@ int main()
         dis.push_back(i);
     sort(dis.begin(), dis.end());
     int max = day;
-    auto beg = dis.rbegin();
-    for (auto it = beg; it != dis.rend(); ++it)
+    for (auto it = dis.rbegin(); it != dis.rend(); ++it)
     {
         auto back = it - dis.rbegin() + 1;
         if ((back >= *it))
