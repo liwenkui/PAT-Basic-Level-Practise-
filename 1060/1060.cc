@@ -11,18 +11,17 @@ int main()
     while ((cin >> i) && (i >= 0))
         dis.push_back(i);
     sort(dis.begin(), dis.end());
-    int max = -1;
+    int max = day;
     auto beg = dis.rbegin();
     for (auto it = beg; it != dis.rend(); ++it)
     {
         auto back = it - dis.rbegin() + 1;
-        if (back >= *it)
+        if ((back >= *it))
         {
             max = back - 1;
             break;
         }
     }
-
     cout << max;
     return 0;
 }
