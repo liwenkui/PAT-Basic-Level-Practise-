@@ -10,11 +10,10 @@ int main()
     cin >> line;
     cin.clear();
     string in;
-    while (line > 0)
+    while (line-- > 0)
     {
 	cin >> in;
 	pat.push_back(in);
-	--line;
     }
     for (auto v : pat)
     {
